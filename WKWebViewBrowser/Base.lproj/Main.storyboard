@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kiV-ec-RIi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--InitialVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="InitialVC" customModule="WKWebViewBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3sn-J5-iXM"/>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3sn-J5-iXM" secondAttribute="trailing" constant="-20" id="Op3-l4-bKK"/>
+                            <constraint firstItem="3sn-J5-iXM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aEx-kY-PaE"/>
+                            <constraint firstItem="3sn-J5-iXM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="pK0-6X-YqN"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="72A-Oa-Z7G">
+                        <nil key="title"/>
+                        <leftBarButtonItems>
+                            <barButtonItem title="&lt;" id="6La-YR-SCQ">
+                                <connections>
+                                    <action selector="backBarButtonPressed:" destination="BYZ-38-t0r" id="azw-cb-PTL"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="&gt;" id="bEr-nU-qed">
+                                <connections>
+                                    <action selector="forwardBarButtonPressed:" destination="BYZ-38-t0r" id="89p-Bf-d4a"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <view key="titleView" contentMode="scaleToFill" id="uTr-Ud-475">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gIK-wV-qqE">
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="go"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="h1I-wo-C6p"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="gIK-wV-qqE" firstAttribute="top" secondItem="uTr-Ud-475" secondAttribute="top" id="3VN-gz-8SY"/>
+                                <constraint firstAttribute="trailing" secondItem="gIK-wV-qqE" secondAttribute="trailing" id="Vh8-35-wKJ"/>
+                                <constraint firstItem="gIK-wV-qqE" firstAttribute="leading" secondItem="uTr-Ud-475" secondAttribute="leading" id="WM2-P7-Wpd"/>
+                                <constraint firstAttribute="bottom" secondItem="gIK-wV-qqE" secondAttribute="bottom" id="gNa-W2-qW3"/>
+                            </constraints>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="bDb-vp-SbT">
+                            <connections>
+                                <action selector="reloadBarButtonPressed:" destination="BYZ-38-t0r" id="xB1-f5-tWI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBarButton" destination="6La-YR-SCQ" id="ebp-WY-J1X"/>
+                        <outlet property="forwardBarButton" destination="bEr-nU-qed" id="pBm-LD-Pfa"/>
+                        <outlet property="navBarView" destination="uTr-Ud-475" id="qeo-OM-bJQ"/>
+                        <outlet property="progressView" destination="3sn-J5-iXM" id="UvS-vv-ye5"/>
+                        <outlet property="reloadBarButton" destination="bDb-vp-SbT" id="NfK-xX-0jI"/>
+                        <outlet property="urlTextField" destination="gIK-wV-qqE" id="s1o-gC-Bpj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dfp-dy-Tnd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kiV-ec-RIi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TZq-SW-TNF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.88108041390000003" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gyB-YT-Mc1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRV-oX-31L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="-646.32683658170924"/>
+        </scene>
+    </scenes>
+</document>
